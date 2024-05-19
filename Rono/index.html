@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rono工具下载站点</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        #search-bar {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .description {
+            color: #666;
+        }
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            #search-bar,
+            button {
+                width: 100%;
+                margin: 0;
+            }
+            .search-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBar = document.getElementById('search-bar');
+            const searchButton = document.getElementById('search-button');
+            const items = document.querySelectorAll('.software-item');
+
+            searchButton.addEventListener('click', function() {
+                const searchTerm = searchBar.value.trim().toLowerCase();
+                items.forEach(item => {
+                    const title = item.querySelector('.title').textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Rono提供开发工具搜索与下载</h1>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="搜索软件名称...">
+            <button id="search-button">搜索</button>
+        </div>
+        <ul id="software-list">
+            <li class="software-item">
+                <h2 class="title">Unity</h2>
+                <p class="description">强大的跨平台游戏引擎，支持快速创建2D和3D游戏。</p>
+                <a href="https://unity.cn/releases" target="_blank">下载Unity</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Unreal Engine</h2>
+                <p class="description">业界领先的实时3D创作平台，适合制作高质量的游戏和视觉体验。</p>
+                <a href="https://www.unrealengine.com/zh-CN/download" target="_blank">下载Unreal Engine</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">blender</h2>
+                <p class="description">Blender 是一款功能全面且免费的开源3D创作软件，它提供了一整套工具集，涵盖了3D建模、纹理绘制、动画、渲染、合成、视频剪辑、模拟、游戏开发等多个领域。Blender以其强大的功能和跨平台兼容性而闻名，被广泛应用于电影特效、游戏开发、建筑设计、艺术创作和教育等多个行业。</p>
+                <a href="https://www.unrealengine.com/en-US/download" target="_blank">下载Blender</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Pycharm</h2>
+                <p class="description">PyCharm 是一款由JetBrains公司开发的集成开发环境（IDE），专门针对Python编程语言设计。PyCharm以其强大的功能和优秀的用户体验而受到广大Python开发者喜爱</p>
+                <a href="https://download-cdn.jetbrains.com.cn/python/pycharm-community-2024.1.1.exe" target="_blank">下载Pycharm</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Godot</h2>
+                <p class="description">Godot 是一款开源的跨平台游戏引擎，支持2D和3D游戏开发。</p>
+                <a href="https://godotengine.org/download" target="_blank">下载Godot</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Visual Studio Code</h2>
+                <p class="description">Visual Studio Code 是一款由微软开发的开源编辑器，支持多种编程语言和开发工具。</p>
+                <a href="https://code.visualstudio.com/download" target="_blank">下载Visual Studio Code</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Sublime Text</h2>
+                <p class="description">Sublime Text 是一款开源的文本编辑器，支持多种编程语言和开发工具。</p>
+                <a href="https://www.sublimetext.com/3" target="_blank">下载Sublime Text</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Vim</h2>
+                <p class="description">Vim 是一款开源的文本编辑器，支持多种编程语言和开发工具。</p>
+                <a href="https://www.vim.org/download.php" target="_blank">下载Vim</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Emacs</h2>
+                <p class="description">Emacs 是一款开源的文本编辑器，支持多种编程语言和开发工具。</p>
+                <a href="https://www.gnu.org/software/emacs/download.html" target="_blank">下载Emacs</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Notepad++</h2>
+                <p class="description">Notepad++ 是一款开源的文本编辑器，支持多种编程语言和开发工具。</p>
+                <a href="https://notepad-plus-plus.org/downloads/" target="_blank">下载Notepad++</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Atom</h2>
+                <p class="description">Atom 是一款开源的文本编辑器，支持多种编程语言和开发工具。</p>
+                <a href="https://atom.io/download/windows" target="_blank">下载Atom</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">VS Code</h2>
+                <p class="description">VS Code 是一款开源的文本编辑器，支持多种编程语言和开发工具。</p>
+                <a href="https://code.visualstudio.com/download" target="_blank">下载VS Code</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Xcode</h2>
+                <p class="description">Xcode 是苹果公司的开发者工具，支持iOS、macOS和watchOS的开发。</p>
+                <a href="https://developer.apple.com/xcode/download/" target="_blank">下载Xcode</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Android Studio</h2>
+                <p class="description">Android Studio 是一款由Google提供的开源的Android开发工具，支持Android应用程序的开发。</p>
+                <a href="https://developer.android.com/studio" target="_blank">下载Android Studio</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Eclipse</h2>
+                <p class="description">Eclipse 是一款开源的集成开发环境（IDE），支持Java、C、C++、Python等多种编程语言和开发工具。</p>
+                <a href="https://www.eclipse.org/downloads/" target="_blank">下载Eclipse</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Python</h2>
+                <p class="description">Python 是一种解释型、面向对象、动态的编程语言，具有简洁、易读、易学、易扩展、可移植等特点。</p>
+                <a href="https://www.python.org/downloads/" target="_blank">下载Python</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Java</h2>
+                <p class="description">Java 是一种面向对象的编程语言，由Sun Microsystems公司于1995年创建。</p>
+                <a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank">下载Java</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">C++</h2>
+                <p class="description">C++ 是一种通用的编程语言，由Bjarne Stroustrup于1983年创建。</p>
+                <a href="https://www.cplusplus.com/download/" target="_blank">下载C++</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">C#</h2>
+                <p class="description">C# 是一种面向对象的编程语言，由Microsoft公司于2000年创建。</p>
+                <a href="https://dotnet.microsoft.com/download/dotnet/6.0" target="_blank">下载C#</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">PHP</h2>
+                <p class="description">PHP 是一种通用的脚本语言，由Rasmus Lerdorf于1994年创建。</p>
+                <a href="https://www.php.net/downloads.php" target="_blank">下载PHP</a>
+            </li>
+            <li class="software-item">
+                <h2 class="title">Ruby</h2>
+                <p class="description">Ruby 是一种动态的、面向对象的编程语言，由Yukihiro Matsumoto于1995年创建。</p>
+                <a href="https://www.ruby-lang.org/en/downloads/" target="_blank">下载Ruby</a>
+            </li>
+            <!-- 更多软件条目... -->
+        </ul>
+    </div>
+</body>
+</html>
