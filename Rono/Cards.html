@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 卡片中心</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+        
+        #searchInput {
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            width: 200px;
+        }
+        
+        .card {
+            margin: 2rem 1rem;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        
+        #backToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #5bc0de;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        #backToTopBtn:hover {
+            opacity: 1;
+        }
+        
+        @media screen and (max-width: 600px) {
+            #searchInput {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 顶部搜索栏 -->
+<div class="header">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button id="searchBtn">Search</button>
+    <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
+</div>
+
+<!-- 工具卡片容器 -->
+<div class="cards-container">
+    <div class="card" onclick="window.open('https://example.com')">
+        <h3>Card 1</h3>
+        <p>Card description.</p>
+    </div>
+    <div class="card" onclick="window.open('https://example.org')">
+        <h3>Card 2</h3>
+        <p>Another card description.</p>
+    </div>
+    <!-- 更多卡片... -->
+</div>
+
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Optional: Show back to top button when scrolling down
+    window.onscroll = function() {
+        var scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+        var backButton = document.getElementById("backToTopBtn");
+        if (scrollPosition > 200) {
+            backButton.style.display = "block";
+        } else {
+            backButton.style.display = "none";
+        }
+    };
+</script>
+
+</body>
+</html>
